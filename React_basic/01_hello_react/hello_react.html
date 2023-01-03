@@ -9,8 +9,22 @@
 </head>
 
 <body>
-    <!---->
+    <!--Vector-->
     <div id="test"></div>
+
+    <!-- import core lib -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- import react-dom, assit react dom -->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <!-- import babel, transform jsx to js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel"> /*must use babel, use jsx*/
+        //1. create virtual dom
+        const VDOM = <h1>Hello,React</h1> //not using ;, that is not string
+        //2. render virtual dom to web page
+        ReactDOM.render(VDOM, document.getElementById('test'))
+    </script>
 </body>
 
 </html>
