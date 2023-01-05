@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsx_rules</title>
+    <style>
+        .title {
+            background-color: green;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Vector-->
+    <div id="test"></div>
+
+    <!-- import core lib -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- import react-dom, assit react dom -->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <!-- import babel, transform jsx to js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+        const myID = 'atJHU'
+        const myData = 'hello, react'
+        const VDOM = (
+            <div>
+                <h2 className="title" id={myID.toLowerCase()}>
+                    <span style={{ color: 'white', fontSize: '20px' }}>{myData.toLowerCase()}</span>
+                </h2>
+                <h2 className="title" id={myID.toUpperCase()}>
+                    <span style={{ color: 'white', fontSize: '20px' }}>{myData.toLowerCase()}</span>
+                </h2>
+                <input type="text" />
+            </div>
+        )
+        ReactDOM.render(VDOM, document.getElementById('test'))
+        /*
+            jsx rules
+                1. do not use "", when define virtual dom
+                2. use {}, when using JS
+                3. Use className
+                4. 内联样式要用style={{key:value}}
+                5. 只有一个根标签
+                6. 标签必须闭合
+                7. 标签首字母
+                    （1）.小写字母开头，则将标签转为html中同名元素，若无同名元素，则报错
+                    （2）.大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错
+        */
+    </script>
+</body>
+
+</html>
