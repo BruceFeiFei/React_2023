@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3_virtualDom&realDom</title>
+</head>
+
+<body>
+    <!--Vector-->
+    <div id="test"></div>
+    <div id="real"></div>
+
+    <!-- import core lib -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- import react-dom, assit react dom -->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <!-- import babel, transform jsx to js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel"> /*must use babel, use jsx*/
+        //1. create virtual dom
+        const VDOM = ( //not using ;, that is not string
+            <span>
+                <h1 id="title">Hello,React</h1>
+            </span>
+        )
+        //2. render virtual dom to web page
+        ReactDOM.render(VDOM, document.getElementById('test'))
+        const TDOM = document.getElementById('real')
+        console.log('realDom', TDOM);
+        console.log('virtualDom', VDOM);
+        console.log(typeof VDOM);
+        console.log(VDOM instanceof Object);
+        /*
+            Virtual Dom
+                1.Object
+                2.Light, virtual dom is used inside React, do not need so much attribute
+                3.Virtual Dom will finally be transformed into real Dom to the web page
+        */
+    </script>
+</body>
+
+</html>

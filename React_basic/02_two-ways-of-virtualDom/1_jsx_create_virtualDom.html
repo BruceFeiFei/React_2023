@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1_jsx_create_virtualDom</title>
+</head>
+
+<body>
+    <!--Vector-->
+    <div id="test"></div>
+
+    <!-- import core lib -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- import react-dom, assit react dom -->
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <!-- import babel, transform jsx to js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel"> /*must use babel, use jsx*/
+        //1. create virtual dom
+        const VDOM = ( //not using ;, that is not string
+            <span>
+                <h1 id="title">Hello,React</h1>
+            </span>
+        )
+        //2. render virtual dom to web page
+        ReactDOM.render(VDOM, document.getElementById('test'))
+    </script>
+</body>
+
+</html>
